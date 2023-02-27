@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+
+:root {
+    --clr-bcg    : #f9f9f9;
+    --main       : #fff;
+    --clr-font   : #282c35;
+    --clr-primary: #222
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0
+}
+
+body {
+    background : #f9f9f9;
+    background : var(--clr-bcg);
+    color      : #282c35;
+    color      : var(--clr-font);
+    font-family: Montserrat, sans-serif;
+    transition : all .3s linear
+}
+
+.dark-theme {
+    --clr-bcg    : #282c35;
+    --main       : #16181e;
+    --clr-font   : #fff;
+    --clr-primary: #fc8cb1
+}
+
+.light-theme {
+    --clr-bcg    : #f9f9f9;
+    --main       : #fff;
+    --clr-font   : #282c35;
+    --clr-primary: #222
+}
+
+a {
+    text-decoration: none
+}
+
+.form-control {
+    border-bottom-right-radius: 0;
+    border-top-right-radius   : 0
+}
+
+.welcome-text {
+    color     : #282c35;
+    color     : var(--clr-font);
+    font-style: italic
+}
+
+.primary {
+    color: #222;
+    color: var(--clr-primary)
+}
+
+.flex {
+    align-items    : center;
+    display        : flex;
+    justify-content: space-between
+}
+
+#task-container {
+    background   : #fff;
+    background   : var(--main);
+    border-radius: 8px;
+    box-shadow   : 5px 5px 15px rgba(0, 0, 0, .1), -5px -5px 15px rgba(0, 0, 0, .1);
+    color        : #222;
+    color        : var(--clr-primary);
+    margin       : 100px auto;
+    max-width    : 600px;
+    padding      : 40px;
+    position     : -webkit-sticky;
+    position     : sticky;
+    top          : 0
+}
+
+#submit {
+    border       : 0;
+    border-radius: 0
+}
+
+#list-wrapper {
+    margin: 2rem 0
+}
+
+.task-wrapper {
+    grid-gap             : 1.45rem;
+    align-items          : center;
+    background-color     : #f9f9f9;
+    background-color     : var(--clr-bcg);
+    box-shadow           : 3px 3px 10px rgba(0, 0, 0, .3);
+    display              : grid;
+    gap                  : 1.45rem;
+    grid-template-columns: auto 1fr auto;
+    margin               : 10px 0;
+    padding              : 13px;
+    transition           : all .2s linear
+}
+
+.task-wrapper:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .4)
+}
+
+#mode {
+    color    : #282c35;
+    color    : var(--clr-font);
+    font-size: 24px
+}
+
+.login-container {
+    -webkit-animation: fadeOut .3s forwards;
+    animation        : fadeOut .3s forwards
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*# sourceMappingURL=main.19cb3d32.css.map*/

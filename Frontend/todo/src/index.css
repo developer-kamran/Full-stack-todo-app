@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --clr-bcg    : #f9f9f9;
+    --main       : #fff;
+    --clr-font   : #282c35;
+    --clr-primary: #222;
+
+}
+
+*,
+:before,
+*:after {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    background : var(--clr-bcg);
+    color      : var(--clr-font);
+    transition : all 0.3s linear;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dark-theme {
+    --clr-bcg    : #282c35;
+    --main       : #16181e;
+    --clr-font   : #fff;
+    --clr-primary: #fc8cb1;
+}
+
+.light-theme {
+    --clr-bcg    : #f9f9f9;
+    --main       : #fff;
+    --clr-font   : #282c35;
+    --clr-primary: #222;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-control {
+    border-bottom-right-radius: 0;
+    border-top-right-radius   : 0;
+}
+
+.welcome-text {
+    color     : var(--clr-font);
+    font-style: italic;
+}
+
+.primary {
+    color: var(--clr-primary);
+}
+
+.flex {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+}
+
+
+#task-container {
+    max-width    : 600px;
+    margin       : 100px auto;
+    position     : sticky;
+    top          : 0;
+    padding      : 40px;
+    border-radius: 8px;
+    background   : var(--main);
+    color        : var(--clr-primary);
+    box-shadow   : 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#submit {
+    border-radius: 0;
+    border       : 0;
+}
+
+#list-wrapper {
+    margin: 2rem 0;
+}
+
+.task-wrapper {
+    box-shadow           : 3px 3px 10px rgba(0, 0, 0, 0.3);
+    background-color     : var(--clr-bcg);
+    margin               : 10px 0;
+    padding              : 13px;
+    display              : grid;
+    grid-template-columns: auto 1fr auto;
+    align-items          : center;
+    gap                  : 1.45rem;
+    transition           : all 0.2s linear;
+
+}
+
+.task-wrapper:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+#mode {
+    font-size: 24px;
+    color    : var(--clr-font);
+}
+
+.login-container {
+    animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1
+    }
+}
