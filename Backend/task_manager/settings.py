@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': env("DATABASE_ENGINE"),
-        'NAME': BASE_DIR / env("DATABASE_NAME"),
-    }
+    # 'default': {
+    #     'ENGINE': env("DATABASE_ENGINE"),
+    #     'NAME': BASE_DIR / env("DATABASE_NAME"),
+    # }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build', 'static'
 
 STATICFILES_DIRS = [
     BASE_DIR / '../Frontend/todo/build/static'
