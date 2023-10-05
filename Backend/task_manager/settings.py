@@ -1,20 +1,26 @@
 from pathlib import Path
 from datetime import timedelta
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
-mimetypes.add_type("text/javascript", ".js", True)
-
 import environ
 env = environ.Env()
 environ.Env.read_env()
+
+# import mimetypes
+# mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("application/javascript", ".js", True)
+
+# importing the function from utils
+# from django.core.management.utils import get_random_secret_key
+
+# generating and printing the SECRET_KEY
+# print(get_random_secret_key())
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = False
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
 
@@ -45,16 +51,21 @@ REST_FRAMEWORK = {
 # Middlewares
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+# WHITENOISE_MIMETYPES = {
+#     '.js': 'text/javascript',
+#     '.css':'text/css',
+# }
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -88,10 +99,10 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': env("DATABASE_ENGINE"),
-    #     'NAME': BASE_DIR / env("DATABASE_NAME"),
-    # }
+    'default': {
+        'ENGINE': env("DATABASE_ENGINE"),
+        'NAME': BASE_DIR / env("DATABASE_NAME"),
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -122,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles_build', 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
     BASE_DIR / '../Frontend/todo/build/static'

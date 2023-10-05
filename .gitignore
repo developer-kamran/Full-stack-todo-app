@@ -1,1 +1,10 @@
-.env
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/Frontend/todo/node_modules
+
+# production
+/Frontend/todo/build
+
+# env
+/Backend/.env
